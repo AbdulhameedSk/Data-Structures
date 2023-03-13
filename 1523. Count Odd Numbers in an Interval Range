@@ -1,0 +1,22 @@
+/*
+class Solution {
+    public int countOdds(int low, int high) {
+        int count=0;
+        while(low<=high){
+            if(low%2!=0){
+                count++;
+            }
+            low++;
+}
+return count;
+    }
+} time limit exceeded
+*/
+
+//Formula for number of odd numbers is (high - low) / 2 + (high % 2 == 1 || low % 2 == 1 ? 1 : 0)
+
+class Solution {
+    public int countOdds(int low, int high) {
+        return (high - low) / 2 + (high % 2 == 1 || low % 2 == 1 ? 1 : 0);
+    }
+}
