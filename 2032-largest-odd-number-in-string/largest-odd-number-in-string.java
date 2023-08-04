@@ -12,7 +12,7 @@ class Solution {
             String temp = "";
     for (int i = num.length() - 1; i >= 0; i--) {
         char samp = num.charAt(i);
-        if (Character.isDigit(samp) && Long.parseLong(String.valueOf(samp))%2 !=0) {
+        if (Character.isDigit(samp) && (samp - '0') % 2 != 0) {
             temp = num.substring(0, i + 1);
             break;
                 }
