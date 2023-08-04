@@ -17,6 +17,7 @@ class Solution {
             break;
                 }
             }
+            System.gc();
             return temp;
         }
     }
