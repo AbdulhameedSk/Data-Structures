@@ -14,6 +14,7 @@ class Solution {
             else{
                 high=mid-1;
             }
+            System.gc();
         }
         return -1;
     }
