@@ -5,7 +5,7 @@ class Solution {
         long sum=0;
         for(;r<nums.length;r++){
             sum=sum+nums[r];
-            for(;nums[r]*(r-l+1)>sum+k;l++){
+            for(;(nums[r]*(r-l+1))-sum>k;l++){
                 sum-=nums[l];
             }
             ans=Math.max(ans,r-l+1);
