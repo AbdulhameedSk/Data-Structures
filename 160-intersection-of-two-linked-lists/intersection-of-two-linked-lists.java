@@ -10,36 +10,27 @@
  * }
  */
 public class Solution {
-    public static int sized(ListNode h1){
-        ListNode t1=h1;
-        int s1=0;
-        while(t1!=null){
-            s1++;
-            t1=t1.next;
-        }
-        return s1;
-    }
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        int sa=sized(headA),sb=sized(headB);
-        int d=Math.abs(sa-sb);
-        ListNode t1=headA,t2=headB;
-        while(d!=0){
-            if(sa>sb){
-                t1=t1.next;
-                d--;
-            }
-            if(sa<sb){
-                t2=t2.next;
-                d--;
-            }
+        ListNode a=headA,b=headB;
+        if(a==null || b==null){
+            return null;
         }
-        while(t1!=t2){
-            if(t1==null || t2==null){
-                return null;
+        while(a!=b){
+            if(a==null){
+                a=headB;
             }
-            t1=t1.next;
-            t2=t2.next;
+            else{
+                a=a.next;
+            }
+            if(b==null){
+                b=headA;
+            }else{
+                 b=b.next;
+            }
+            
+           
+            
         }
-        return t1;
+        return a;
     }
 }
