@@ -1,13 +1,17 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-        int k=0;
+        // snowball approach time=O(n) space=o(1)
+        int snowball=0;
+
         for(int i=0;i<nums.length;i++){
-            if(nums[i]!=0){
-                nums[k++]=nums[i];
+            if(nums[i]==0){
+                snowball++;
             }
-        }
-        for(int next=k;next<nums.length;next++){
-            nums[next]=0;
+
+            else if(snowball>0){
+                nums[i-snowball]=nums[i];
+                nums[i]=0;
+            }
         }
     }
 }
