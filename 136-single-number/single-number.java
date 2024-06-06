@@ -1,9 +1,19 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int ans=nums[0];
-        for(int i=1;i<nums.length;i++){
-            ans=ans^nums[i];
+        for(int i=0;i<nums.length;i++){
+            if(findnum(nums,nums[i])==1){
+                return nums[i];
+            }
         }
-        return ans;
+        return -1;
+    }
+    public static int findnum(int[] nums,int n){
+        int c=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==n){
+                c++;
+            }
+        }
+        return c;
     }
 }
