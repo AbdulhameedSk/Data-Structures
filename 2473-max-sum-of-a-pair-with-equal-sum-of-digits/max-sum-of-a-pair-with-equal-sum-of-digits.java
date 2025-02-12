@@ -1,30 +1,20 @@
-import java.util.HashMap;
-
 class Solution {
     public int maximumSum(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int maxi = -1;
-        
-        for (int num : nums) {
-            int sum = dsum(num);
-            
-            if (map.containsKey(sum)) {
-                maxi = Math.max(maxi, num + map.get(sum));
-                map.put(sum, Math.max(map.get(sum), num));
-            } else {
-                map.put(sum, num);
+        int[] max = new int[82];
+        int ans = -1;
+        for (int x : nums) {
+            int sum = 0;
+            int temp = x;
+            while (temp != 0) {
+                sum += temp % 10;
+                temp /= 10;
             }
+            if (max[sum] != 0) {
+                ans = Math.max(ans, x + max[sum]);
+            }
+            max[sum] = Math.max(max[sum], x);
         }
-        
-        return maxi;
+        return ans;
     }
-
-    private int dsum(int a) {
-        int sum = 0;
-        while (a > 0) {
-            sum += a % 10;
-            a /= 10;
-        }
-        return sum;
-    }
+    
 }
