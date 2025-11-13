@@ -4,20 +4,13 @@ class Solution {
         if(n==1)return;
         int i=0,j=0;
         while(j<n){
-            if(nums[j]!=0 && nums[i]==0){
+            if(nums[j]!=0){
                 int temp=nums[i];
                 nums[i]=nums[j];
                 nums[j]=temp;
-                if(nums[i]!=0){
-i++;                }
-            }
-            else if (nums[j]==0){
-                j++;
-            }
-            else if((nums[i]!=0) && (nums[j]!=0)){
                 i++;
-                j++;
             }
+            j++;
         }
     }
 }
