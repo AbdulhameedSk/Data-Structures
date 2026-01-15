@@ -13,10 +13,10 @@ class Solution {
                 al.get(al.size()-1)[1]=Math.max((al.get(al.size()-1)[1]),intervals[i][1]);
             }
         }
-        int[][] ans=new int[al.size()][2];
-        for(int i=0;i<al.size();i++){
-            ans[i]=al.get(i);
-        }
-        return ans;
+        // int[][] ans=new int[al.size()][2];
+        // for(int i=0;i<al.size();i++){
+        //     ans[i]=al.get(i);
+        // }
+        return al.toArray(new int[al.size()][2]);
     }
 }
